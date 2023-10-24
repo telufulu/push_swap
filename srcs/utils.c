@@ -1,27 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: telufulu <telufulu@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/23 23:12:12 by telufulu          #+#    #+#             */
-/*   Updated: 2023/10/24 21:39:52 by telufulu         ###   ########.fr       */
+/*   Created: 2023/10/24 19:33:24 by telufulu          #+#    #+#             */
+/*   Updated: 2023/10/24 21:39:45 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "push_swap.h"
 
-# include <stdlib.h>
-# include <unistd.h>
-
-typedef struct	s_stack
+void	ft_error(int err)
 {
-	int				nb;
-	struct s_stack	*next;
-}				t_stack;
-
-//push_swap.c
-
-#endif
+	write(1, "\x1b[31merror: \x1b[0m", 16);
+	if (err == 1)
+		write(1, "wrong number of arguments\n", 26);
+	exit (EXIT_FAILURE);
+}
