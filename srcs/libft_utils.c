@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 19:33:24 by telufulu          #+#    #+#             */
-/*   Updated: 2023/10/25 13:50:10 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/10/25 18:51:43 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ void	*ft_calloc(size_t count, size_t size)
 
 int	ft_atoi(const char *str)
 {
-	int	res;
-	int	neg;
+	long int		res;
+	int				neg;
 
 	neg = 1;
 	res = 0;
@@ -49,5 +49,7 @@ int	ft_atoi(const char *str)
 		res += (*str - '0');
 		str++;
 	}
+	if (res > INT_MAX)
+		ft_error();
 	return (res * neg);
 }

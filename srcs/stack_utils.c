@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 10:00:00 by telufulu          #+#    #+#             */
-/*   Updated: 2023/10/25 13:46:28 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/10/25 20:32:14 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	set_stack(t_stack **a, char **argv, size_t len)
 	aux = 0;
 	(*a) = ft_calloc(sizeof(t_stack), len);
 	if (!(*a))
-		ft_error(0);
+		ft_error();
 	while (len--)
 	{
 		(*a)[len].next = aux;

@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 23:13:29 by telufulu          #+#    #+#             */
-/*   Updated: 2023/10/25 13:50:49 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/10/25 20:46:56 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,12 @@ int	main(int argc, char **argv)
 	b = 0;
 	if (argc >= 2)
 	{
+		check_arg(argc, argv);
 		set_stack(&a, argv + 1, argc - 1);
+		check_dup(a);
 		check_stack(a);
 	}
 	else
-		ft_error(0);
+		ft_error();
 	return (0);
 }
