@@ -1,40 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   error_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: telufulu <telufulu@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/23 23:13:29 by telufulu          #+#    #+#             */
-/*   Updated: 2023/10/25 13:50:49 by telufulu         ###   ########.fr       */
+/*   Created: 2023/10/25 13:44:44 by telufulu          #+#    #+#             */
+/*   Updated: 2023/10/25 13:53:29 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-//borrar
-static void	check_stack(t_stack *a)
+void	ft_error(char **err)
 {
-	while (a)
-	{
-		printf("%i ", a->nb);
-		a = a->next;
-	}
-}
+	size_t	i;
 
-//
-int	main(int argc, char **argv)
-{
-	t_stack	*a;
-	t_stack	*b;
-
-	b = 0;
-	if (argc >= 2)
+	i = 0;
+	write(1, "\x1b[31mError\n\x1b[0m", 15);
+	if (err)
 	{
-		set_stack(&a, argv + 1, argc - 1);
-		check_stack(a);
+		free(err);
+		err = 0;
 	}
-	else
-		ft_error(0);
-	return (0);
+	exit (EXIT_FAILURE);
 }

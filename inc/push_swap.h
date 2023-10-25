@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 23:12:12 by telufulu          #+#    #+#             */
-/*   Updated: 2023/10/24 21:39:52 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/10/25 13:53:53 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,26 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-typedef struct	s_stack
+/*
+ * BORRAR
+ */
+# include <stdio.h>
+
+typedef struct s_stack
 {
 	int				nb;
 	struct s_stack	*next;
 }				t_stack;
 
-//push_swap.c
+// push_swap.c
 
+// libft_utils.c
+void	*ft_calloc(size_t count, size_t size);
+int		ft_atoi(const char *str);
+
+// stack_utils.c
+void	set_stack(t_stack **a, char **argv, size_t len);
+
+// error_utils.c
+void	ft_error(char **err);
 #endif

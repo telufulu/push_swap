@@ -1,21 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   stack_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: telufulu <telufulu@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/24 19:33:24 by telufulu          #+#    #+#             */
-/*   Updated: 2023/10/24 21:39:45 by telufulu         ###   ########.fr       */
+/*   Created: 2023/10/25 10:00:00 by telufulu          #+#    #+#             */
+/*   Updated: 2023/10/25 13:46:28 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_error(int err)
+void	set_stack(t_stack **a, char **argv, size_t len)
 {
-	write(1, "\x1b[31merror: \x1b[0m", 16);
-	if (err == 1)
-		write(1, "wrong number of arguments\n", 26);
-	exit (EXIT_FAILURE);
+	t_stack	*aux;
+
+	aux = 0;
+	(*a) = ft_calloc(sizeof(t_stack), len);
+	if (!(*a))
+		ft_error(0);
+	while (len--)
+	{
+		(*a)[len].next = aux;
+		(*a)[len].nb = ft_atoi(argv[len]);
+		aux = &(*a)[len];
+	}
 }

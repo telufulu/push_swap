@@ -1,12 +1,12 @@
 NAME			=	push_swap
 CC				=	cc
-CFLAGS			=	-Wall -Werror -Wextra
+CFLAGS			=	-Wall -Werror -Wextra -I $(INC)
 INC				=	inc/
 
 SRCS			=	$(addprefix $(SRCS_DIR), $(SRCS_FILES))
 OBJS			=	$(addprefix $(OBJS_DIR), $(OBJS_FILES))
 OBJS_FILES		=	$(SRCS_FILES:%.c=%.o)
-SRCS_FILES		=	push_swap.c utils.c
+SRCS_FILES		=	push_swap.c libft_utils.c stack_utils.c error_utils.c
 
 SRCS_DIR		=	srcs/
 OBJS_DIR		=	objs/
@@ -14,7 +14,7 @@ OBJS_DIR		=	objs/
 all:	$(NAME)
 
 $(NAME):	$(OBJS)
-	$(CC) $(CFLAGS) -I $(INC) $(OBJS) -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
 $(OBJS_DIR)%.o:	$(SRCS_DIR)%.c
 	[ -d $(OBJS_DIR) ] | mkdir -p $(OBJS_DIR)
