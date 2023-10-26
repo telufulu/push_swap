@@ -6,7 +6,8 @@ INC				=	inc/
 SRCS			=	$(addprefix $(SRCS_DIR), $(SRCS_FILES))
 OBJS			=	$(addprefix $(OBJS_DIR), $(OBJS_FILES))
 OBJS_FILES		=	$(SRCS_FILES:%.c=%.o)
-SRCS_FILES		=	push_swap.c libft_utils.c stack_utils.c error_utils.c
+SRCS_FILES		=	push_swap.c libft_utils.c stack_utils.c error_utils.c \
+					swap_operators.c
 
 SRCS_DIR		=	srcs/
 OBJS_DIR		=	objs/

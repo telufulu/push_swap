@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 10:00:00 by telufulu          #+#    #+#             */
-/*   Updated: 2023/10/26 12:54:59 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/10/26 13:16:34 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,11 @@ void	set_stack(t_stack **a, char **argv, size_t len)
 		aux = &(*a)[len];
 	}
 	check_dup((*a));
+}
+
+t_stack	*get_last(t_stack *a)
+{
+	while (a->next)
+		a = a->next;
+	return (a);
 }

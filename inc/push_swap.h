@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 23:12:12 by telufulu          #+#    #+#             */
-/*   Updated: 2023/10/26 12:56:51 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/10/26 13:56:51 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,13 @@ size_t	ft_strlen(const char *s);
 // stack_utils.c
 void	set_stack(t_stack **a, char **argv, size_t len);
 void	check_stack(t_stack *a);
+t_stack	*get_last(t_stack *a);
 
 // error_utils.c
 void	ft_error(void);
 void	check_arg(int argc, char **argv);
 void	check_dup(t_stack *a);
+
+// swap_operators.c
+void	swap(t_stack *a, t_stack *b);
 #endif
