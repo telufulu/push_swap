@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 13:44:44 by telufulu          #+#    #+#             */
-/*   Updated: 2023/10/25 21:33:43 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/10/26 12:57:11 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	check_dup(t_stack *a)
 {
 	int		x;
 	t_stack	*i;
-	t_stack *aux;
+	t_stack	*aux;
 
 	aux = a;
 	while (aux)

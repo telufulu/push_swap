@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 23:12:12 by telufulu          #+#    #+#             */
-/*   Updated: 2023/10/25 21:33:46 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/10/26 12:56:51 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,8 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-/*
- * BORRAR
- */
-# include <stdio.h>
-
 # define INT_MAX 2147483647
+
 typedef struct s_stack
 {
 	int				nb;
@@ -33,9 +29,12 @@ typedef struct s_stack
 // libft_utils.c
 void	*ft_calloc(size_t count, size_t size);
 int		ft_atoi(const char *str);
+size_t	ft_putnbr_base(int nb, char *base);
+size_t	ft_strlen(const char *s);
 
 // stack_utils.c
 void	set_stack(t_stack **a, char **argv, size_t len);
+void	check_stack(t_stack *a);
 
 // error_utils.c
 void	ft_error(void);
