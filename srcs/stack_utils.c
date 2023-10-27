@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 10:00:00 by telufulu          #+#    #+#             */
-/*   Updated: 2023/10/26 17:51:20 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/10/27 21:21:38 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,13 @@ void	set_stack(t_stack **a, char **argv, size_t len)
 t_stack	*get_last(t_stack *x)
 {
 	while (x->next)
+		x = x->next;
+	return (x);
+}
+
+t_stack	*get_penult(t_stack *x)
+{
+	while ((x->next)->next)
 		x = x->next;
 	return (x);
 }

@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 23:13:29 by telufulu          #+#    #+#             */
-/*   Updated: 2023/10/27 21:15:28 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/10/27 21:24:07 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	main(int argc, char **argv)
 		check_stack(a);
 		write(1, "b: ", 3);
 		check_stack(b);
-		swap(0, &b);
+		rotate(&a, &b);
 		write(1, "a: ", 3);
 		check_stack(a);
 		write(1, "b: ", 3);
