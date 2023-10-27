@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 13:11:21 by telufulu          #+#    #+#             */
-/*   Updated: 2023/10/27 20:53:55 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/10/27 21:15:40 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,25 @@
 
 void	swap(t_stack **a, t_stack **b)
 {
-	t_stack	*last;
-	int		aux;
+	t_stack	*aux;
 
-	if (a && b)
+	if (a && (*a)->next && b && (*b)->next)
 		write(1, "ss\n", 3);
-	if (a)
+	if (a && (*a)->next)
 	{
-		last = get_last((*a));
-		aux = last->nb;
-		last->nb = (*a)->nb;
-		(*a)->nb = aux;
+		aux = (*a)->next;
+		(*a)->next = aux->next;
+		aux->next = (*a);
+		(*a) = aux;
 		if (!b)
 			write(1, "sa\n", 3);
 	}
-	if (b)
+	if (b && (*b)->next)
 	{
-		last = get_last((*b));
-		aux = last->nb;
-		last->nb = (*b)->nb;
-		(*b)->nb = aux;
+		aux = (*b)->next;
+		(*b)->next = aux->next;
+		aux->next = (*b);
+		(*b) = aux;
 		if (!a)
 			write(1, "sb\n", 3);
 	}
