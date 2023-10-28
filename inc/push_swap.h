@@ -6,12 +6,17 @@
 /*   By: telufulu <telufulu@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 23:12:12 by telufulu          #+#    #+#             */
-/*   Updated: 2023/10/27 21:21:04 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/10/28 05:18:43 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
+
+# include <stdio.h>
+/*
+ * borrar ^|^
+ */
 
 # include <stdlib.h>
 # include <unistd.h>
@@ -34,12 +39,13 @@ size_t	ft_strlen(const char *s);
 
 // stack_utils.c
 void	set_stack(t_stack **a, char **argv, size_t len);
-void	check_stack(t_stack *a);
-t_stack	*get_last(t_stack *x);
+void	check_stack(t_stack *a, t_stack *b);
 t_stack	*get_penult(t_stack *x);
+int		is_order(t_stack *a);
+size_t	stack_len(t_stack *a);
 
 // error_utils.c
-void	ft_error(void);
+void	ft_error(int flag);
 void	check_arg(int argc, char **argv);
 void	check_dup(t_stack *a);
 

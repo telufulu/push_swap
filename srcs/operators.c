@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 13:11:21 by telufulu          #+#    #+#             */
-/*   Updated: 2023/10/27 21:24:29 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/10/28 02:21:15 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ void	rotate(t_stack **a, t_stack **b)
 		write(1, "rr\n", 3);
 	if (a && (*a)->next)
 	{
-		last = get_last((*a));
+		last = (get_penult((*a)))->next;
 		aux = (*a);
 		(*a) = (*a)->next;
 		last->next = aux;
@@ -79,7 +79,7 @@ void	rotate(t_stack **a, t_stack **b)
 	}
 	if (b && (*b)->next)
 	{
-		last = get_last((*b));
+		last = (get_penult((*b)))->next;
 		aux = (*b);
 		(*b) = (*b)->next;
 		last->next = aux;
@@ -97,7 +97,7 @@ void	rev_rotate(t_stack **a, t_stack **b)
 		write(1, "rrr\n", 4);
 	if (a)
 	{
-		last = get_last((*a));
+		last = (get_penult((*a)))->next;
 		(get_penult((*a)))->next = 0;
 		last->next = (*a);
 		(*a) = last;
@@ -106,7 +106,7 @@ void	rev_rotate(t_stack **a, t_stack **b)
 	}
 	if (b)
 	{
-		last = get_last((*b));
+		last = (get_penult((*b)))->next;
 		(get_penult((*b)))->next = 0;
 		last->next = (*b);
 		(*b) = last;
