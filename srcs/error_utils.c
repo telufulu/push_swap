@@ -6,15 +6,21 @@
 /*   By: telufulu <telufulu@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 13:44:44 by telufulu          #+#    #+#             */
-/*   Updated: 2023/10/26 12:57:11 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/10/28 05:27:25 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_error(void)
+void	ft_error(int flag)
 {
-	write(1, "\x1b[31mError\n\x1b[0m", 15);
+	write(1, "\x1b[31mError\x1b[0m", 14);
+	if (flag == 1)
+		write(1, " 1\n", 3);
+	else if (flag == 2)
+		write(1, " 2\n", 3);
+	else if (flag == 3)
+		write(1, " 3\n", 3);
 	exit(EXIT_FAILURE);
 }
 
@@ -22,8 +28,8 @@ void	check_arg(int argc, char **argv)
 {
 	while (--argc > 1)
 	{
-		if (*argv[argc] <= '0' || *argv[argc] >= '9')
-			ft_error();
+		if (*argv[argc] < '0' || *argv[argc] > '9')
+			ft_error(2);
 	}
 }
 
@@ -43,7 +49,7 @@ void	check_dup(t_stack *a)
 			if (i->nb == x)
 			{
 				free(a);
-				ft_error();
+				ft_error(3);
 			}
 			i = i->next;
 		}
