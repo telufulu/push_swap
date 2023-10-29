@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 23:12:12 by telufulu          #+#    #+#             */
-/*   Updated: 2023/10/28 05:18:43 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/10/29 15:23:41 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,10 @@ typedef struct s_stack
 
 // push_swap.c
 
+// quicksort.c
+int		get_pivot(t_stack *a);
+void	quicksort(t_stack **a);
+
 // libft_utils.c
 void	*ft_calloc(size_t count, size_t size);
 int		ft_atoi(const char *str);
@@ -42,6 +46,7 @@ void	set_stack(t_stack **a, char **argv, size_t len);
 void	check_stack(t_stack *a, t_stack *b);
 t_stack	*get_penult(t_stack *x);
 int		is_order(t_stack *a);
+int		is_rev_order(t_stack *a);
 size_t	stack_len(t_stack *a);
 
 // error_utils.c

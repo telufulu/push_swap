@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 10:00:00 by telufulu          #+#    #+#             */
-/*   Updated: 2023/10/28 06:34:00 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/10/29 19:09:23 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,30 @@
 
 void	check_stack(t_stack *a, t_stack *b)
 {
-	write(1, "a: ", 3);
+	int	flag;
+
+	flag = 0;
 	while (a)
 	{
+		if (!flag)
+			flag += write(1, "a: ", 3);
 		ft_putnbr_base(a->nb, "0123456789");
 		write(1, " ", 1);
 		a = a->next;
 	}
-	write(1, "\n", 1);
-	write(1, "b: ", 3);
+	if (flag)
+		write(1, "\n", 1);
+	flag = 0;
 	while (b)
 	{
+		if (!flag)
+			flag += write(1, "b: ", 3);
 		ft_putnbr_base(b->nb, "0123456789");
 		write(1, " ", 1);
 		b = b->next;
 	}
-	write(1, "\n", 1);
+	if (flag)
+		write(1, "\n", 1);
 }
 
 void	set_stack(t_stack **a, char **argv, size_t len)
@@ -66,6 +74,20 @@ int	is_order(t_stack *a)
 		aux = a->nb;
 		a = a->next;
 		if (aux > a->nb)
+			return (0);
+	}
+	return (1);
+}
+
+int	is_rev_order(t_stack *a)
+{
+	int	aux;
+
+	while (a && a->next)
+	{
+		aux = a->nb;
+		a = a->next;
+		if (aux < a->nb)
 			return (0);
 	}
 	return (1);
