@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 23:12:12 by telufulu          #+#    #+#             */
-/*   Updated: 2023/10/29 15:23:41 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/10/30 10:25:11 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,13 @@ typedef struct s_stack
 
 // push_swap.c
 
-// quicksort.c
+// algorithm.c
+void	algorithm(t_stack **a, t_stack **b);
+void	my_mergesort(t_stack **a, t_stack **b);
+void	my_bubblesort(t_stack **a, t_stack **b);
+
+// algorithm_utils.c
 int		get_pivot(t_stack *a);
-void	quicksort(t_stack **a);
 
 // libft_utils.c
 void	*ft_calloc(size_t count, size_t size);

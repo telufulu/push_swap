@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 23:13:29 by telufulu          #+#    #+#             */
-/*   Updated: 2023/10/29 14:59:24 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/10/30 10:25:52 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,13 @@
 int	main(int argc, char **argv)
 {
 	t_stack	*a;
+	t_stack *b;
 
+	b = 0;
 	if (argc >= 2)
 	{
 		set_stack(&a, argv + 1, argc - 1);
-		quicksort(&a);
+		algorithm(&a, &b);
 		free(a);
 	}
 	else
