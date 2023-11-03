@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 12:48:04 by telufulu          #+#    #+#             */
-/*   Updated: 2023/11/03 16:58:01 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/11/03 17:13:55 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,9 +98,13 @@ void	algorithm(t_stack **a)
 	b = 0;
 	ft_mergesort(a, &b);
 	if (stack_len(*a) > 3)
+	{
 		algorithm(a);
+	}
 	if (!is_order(*a))
+	{
 		ft_bubblesort_a(a);
-	else if (b)
+	}
+	if (b)
 		ft_bubblesort_b(a, &b);
 }

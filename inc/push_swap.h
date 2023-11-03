@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 23:12:12 by telufulu          #+#    #+#             */
-/*   Updated: 2023/11/03 16:57:26 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/11/03 17:07:59 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ void	set_stack(t_stack **a, char **argv, size_t len);
 void	check_stack(t_stack *a, t_stack *b);
 t_stack	*get_penult(t_stack *x);
 int		is_order(t_stack *a);
+int		is_rev_order(t_stack *a);
 size_t	stack_len(t_stack *a);
 
 // error_utils.c

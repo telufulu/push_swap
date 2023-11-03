@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   algorithm_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: telufulu <telufulu@student.42madrid>       +#+  +:+       +#+        */
+/*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/23 23:13:29 by telufulu          #+#    #+#             */
-/*   Updated: 2023/11/03 17:11:11 by telufulu         ###   ########.fr       */
+/*   Created: 2023/10/30 09:57:58 by telufulu          #+#    #+#             */
+/*   Updated: 2023/10/30 09:58:20 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+int	get_pivot(t_stack *a)
 {
-	t_stack	*a;
+	t_stack	*mid;
+	t_stack	*last;
+	size_t	len;
+	size_t	i;
 
-	if (argc >= 2)
-	{
-		set_stack(&a, argv + 1, argc - 1);
-		algorithm(&a);
-	}
-	else
-		ft_error(1);
-	return (0);
+	i = 0;
+	len = stack_len(a);
+	last = (get_penult(a))->next;
+	mid = a;
+	while (i++ < (len / 2))
+		mid = mid->next;
+	return ((a->nb + mid->nb + last->nb) / 3);
 }
