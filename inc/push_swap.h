@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 23:12:12 by telufulu          #+#    #+#             */
-/*   Updated: 2023/10/28 05:18:43 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/11/03 16:57:26 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,4 +54,10 @@ void	swap(t_stack **a, t_stack **b);
 void	push(t_stack **a, t_stack **b, char flag);
 void	rotate(t_stack **a, t_stack **b);
 void	rev_rotate(t_stack **a, t_stack **b);
+
+// algorithm.c
+void	algorithm(t_stack **a);
+int		get_pivot(t_stack *x);
+void	ft_mergesort(t_stack **a, t_stack **b);
+void	ft_bubblesort_a(t_stack **a);
 #endif
