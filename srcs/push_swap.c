@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 23:13:29 by telufulu          #+#    #+#             */
-/*   Updated: 2023/11/03 17:11:11 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/11/08 01:59:19 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,12 @@ int	main(int argc, char **argv)
 	if (argc >= 2)
 	{
 		set_stack(&a, argv + 1, argc - 1);
-		algorithm(&a);
+		if (argc == 4)
+			ft_bubblesort_a(&a);
+		else if (argc <= 6)
+			sort_five(&a);
+		else
+			algorithm_big(&a);
 	}
 	else
 		ft_error(1);
