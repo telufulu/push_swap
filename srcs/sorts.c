@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 18:38:35 by telufulu          #+#    #+#             */
-/*   Updated: 2023/11/08 02:00:54 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/11/08 11:26:04 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,24 +35,32 @@ void	sort_five(t_stack **a)
 	int		pivot;
 
 	b = 0;
-	while (stack_len(*a) > 3)
+	pivot = get_pivot(*a);
+	while (!is_order(*a) && stack_len(*a) > 3)
 	{
-		pivot = get_pivot(*a);
-		if ((get_penult(*a)->next)->nb < pivot)
+		if ((get_penult(*a)->next)->nb <= pivot)
 			rev_rotate(a, 0);
-		if ((*a)->nb < pivot)
+		else if ((*a)->nb > pivot)
+			rotate(a, 0);
+		else if ((*a)->nb <= pivot)
 			push(a, &b, 'b');
-		if (b && b->next && b->nb > (b->next)->nb)
+		else if ((*a)->nb > ((*a)->next)->nb)
 		{
-			if ((*a)->nb > ((*a)->next)->nb)
+			if (b && b->next && b->nb > (b->next)->nb)
 				swap(a, &b);
 			else
-				swap(0, &b);
+				swap(a, 0);
 		}
 	}
 	ft_bubblesort_a(a);
-	while (b)
+	while (b && !is_order(*a))
 	{
+		if ((*a)->nb > ((*a)->next)->nb)
+		{
+			if (b->next && (b->next)->nb < b->nb)
+				swap(0, &b);
+			swap(a, 0);
+		}
 		if (b->next && (b->next)->nb < b->nb)
 			swap(0, &b);
 		push(a, &b, 'a');
