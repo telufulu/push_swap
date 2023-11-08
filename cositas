@@ -1,0 +1,36 @@
+import spotipy
+from spotipy.oauth2 import SpotifyOAuth
+
+# Define tus credenciales de la aplicación en el Panel de Desarrolladores de Spotify
+client_id = "TU_CLIENT_ID"
+client_secret = "TU_CLIENT_SECRET"
+redirect_uri = "TU_REDIRECT_URI"
+
+# Crea una instancia del cliente de Spotify
+sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=client_id, client_secret=client_secret, redirect_uri=redirect_uri))
+
+# Función para obtener las canciones y artistas de una playlist y guardarlos en un archivo de texto
+def obtener_canciones_artistas(playlist_url, archivo_salida):
+    playlist_id = playlist_url.split('/')[-1]
+    offset = 0
+    limit = 100  # Puedes ajustar el límite según tus necesidades
+
+    with open(archivo_salida, "w", encoding="utf-8") as archivo:
+        while True:
+            tracks = sp.playlist_tracks(playlist_id, offset=offset, limit=limit)
+            if not tracks['items']:
+                break
+
+            for item in tracks['items']:
+                track = item['track']
+                cancion = track['name']
+                artistas = ", ".join([artista['name'] for artista in track['artists']])
+                archivo.write(f"{cancion} - {artistas}\n")
+
+            offset += limit
+
+# Pasa la URL de la playlist y el nombre del archivo de salida como argumentos
+playlist_url = input("Introduce la URL de la playlist de Spotify: ")
+archivo_salida = input("Nombre del archivo de salida (por ejemplo, salida.txt): ")
+
+obtener_canciones_artistas(playlist_url, archivo_salida)
