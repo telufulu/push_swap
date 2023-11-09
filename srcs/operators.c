@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 13:11:21 by telufulu          #+#    #+#             */
-/*   Updated: 2023/11/03 16:58:22 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/11/09 15:31:43 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	push(t_stack **a, t_stack **b, char flag)
 {
 	t_stack	*aux;
 
-	if (flag == 'a')
+	if (flag == 'a' && *b)
 	{
 		aux = (*b);
 		(*b) = (*b)->next;
@@ -50,7 +50,7 @@ void	push(t_stack **a, t_stack **b, char flag)
 		(*a) = aux;
 		write(1, "pa\n", 3);
 	}
-	else if (flag == 'b')
+	else if (flag == 'b' && *a)
 	{
 		aux = (*a);
 		(*a) = (*a)->next;
