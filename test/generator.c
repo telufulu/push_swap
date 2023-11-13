@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 14:14:39 by telufulu          #+#    #+#             */
-/*   Updated: 2023/11/09 13:57:41 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/11/11 13:03:55 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	main(int argc, char **argv)
 		srand(time(NULL));
 		while (i++ < len) 
 		{
-			num = rand() % 100000;
+			num = rand() % 100;
 			if (i < len)
 				printf("%d ", num);
 			else if (i == len)

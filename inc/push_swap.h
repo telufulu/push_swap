@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 23:12:12 by telufulu          #+#    #+#             */
-/*   Updated: 2023/11/09 18:22:42 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/11/11 12:54:32 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,12 +56,14 @@ void	push(t_stack **a, t_stack **b, char flag);
 void	rotate(t_stack **a, t_stack **b);
 void	rev_rotate(t_stack **a, t_stack **b);
 
-// algorithm_big.c
-void	algorithm_big(t_stack **a);
+// algorithm.c
+void	get_big(int *big_one, int *big_two, t_stack *aux);
+void	sort_five_b(t_stack **a, t_stack **b);
+void	sort_three_b(t_stack **b);
+void	ft_mergesort(t_stack **a, t_stack **b);
 
 // sorts.c
 int		get_pivot(t_stack *x);
 void	sort_five(t_stack **a, t_stack **b);
 void	sort_three(t_stack **a);
-void	ft_mergesort(t_stack **a, t_stack **b);
 #endif

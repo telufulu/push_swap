@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 18:38:35 by telufulu          #+#    #+#             */
-/*   Updated: 2023/11/09 18:22:41 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/11/13 23:57:13 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,53 +52,31 @@ void	get_small(int *small_one, int *small_two, t_stack *aux)
 
 void	sort_five(t_stack **a, t_stack **b)
 {
-	int	small_one;
-	int	small_two;
+	int		small_one;
+	int		small_two;
+	t_stack	*last;
+	t_stack	*pen;
 	
 	get_small(&small_one, &small_two, *a);
 	while (!is_order(*a))
 	{
-		if (((*a)->nb == small_one || (*a)->nb == small_two))
+		pen = get_penult(*a);
+		last = pen->next;
+		if (pen->nb == small_two || last->nb == small_two)
+			rev_rotate(a, 0);
+		else if (pen->nb == small_one || last->nb == small_one)
+			rev_rotate(a, 0);
+		else if (((*a)->nb == small_one || (*a)->nb == small_two))
 			push(a, b, 'b');
+		else
+			rotate(a, 0);
 		if (stack_len(*a) == 3)
 			sort_three(a);
-		else if ((get_penult(*a)->next)->nb == small_one)
-			rev_rotate(a, 0);
-		else if ((get_penult(*a)->next)->nb == small_two)
-			rev_rotate(a, 0);
-		else
-			rotate(a, 0);
 	}	
-	while (*b)
-		push(a, b, 'a');
+	push(a, b, 'a');
+	push(a, b, 'a');
 	if ((*a)->nb > ((*a)->next)->nb)
 		swap(a, 0);
-}
-
-void	ft_mergesort(t_stack **a, t_stack **b)
-{
-	int	pivot;
-
-	pivot = get_pivot(*a);
-	while (stack_len(*a) > 3 && stack_len(*b) < 3)
-	{
-		if ((get_penult(*a)->next)->nb < pivot)
-			rev_rotate(a, 0);
-		if ((*a)->nb >= pivot)
-			rotate(a, 0);
-		else
-		{
-			push(a, b, 'b');
-			pivot = get_pivot(*a);
-			if ((*b)->next && (*b)->nb > ((*b)->next)->nb)
-			{
-				if ((*a)->nb > ((*a)->next)->nb)
-					swap(a, b);
-				else
-					swap(0, b);
-			}
-		}
-	}
 }
 
 void	sort_three(t_stack **a)
@@ -112,9 +90,10 @@ void	sort_three(t_stack **a)
 		three = two->next;
 		if ((*a)->nb > two->nb)
 			swap(a, 0);
-		else if (three->nb < (*a)->nb && three->nb < two->nb)
-			rev_rotate(a, 0);
-		else if (((*a)->nb > (three->nb && two->nb)) || three->nb < two->nb)
+		else if (((*a)->nb > three->nb && (*a)->nb > two->nb))
 			rotate(a, 0);
+		else if ((three->nb < (*a)->nb && three->nb < two->nb) ||
+			((*a)->nb < two->nb && two->nb > three->nb))
+			rev_rotate(a, 0);
 	}
 }
