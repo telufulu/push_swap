@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 10:00:00 by telufulu          #+#    #+#             */
-/*   Updated: 2023/11/03 17:09:36 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/11/14 20:03:26 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ void	set_stack(t_stack **a, char **argv, size_t len)
 		aux = &(*a)[len];
 	}
 	check_dup((*a));
+	convert_numbers(*a);
 }
 
 t_stack	*get_penult(t_stack *x)
