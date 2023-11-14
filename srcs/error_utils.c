@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 13:44:44 by telufulu          #+#    #+#             */
-/*   Updated: 2023/11/09 15:26:58 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/11/14 11:26:54 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_error(int flag)
 		write(1, " 1\n", 3);
 	else if (flag == 2)
 		write(1, " 2\n", 3);
-	else if (flag == 3)
+	else if (flag == 3) // Dup numbers
 		write(1, " 3\n", 3);
 	else if (flag == 4) //Is not order
 		write(1, " 4\n", 3);
