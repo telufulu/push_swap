@@ -20,11 +20,15 @@ $(OBJS_DIR)%.o:	$(SRCS_DIR)%.c
 	[ -d $(OBJS_DIR) ] | mkdir -p $(OBJS_DIR)
 	$(CC) $(CFLAGS) -c $< -o $@
 
+generator:
+	$(CC) $(CFLAGS) test/generator.c -o $@
+
 clean:
 	rm -rf $(OBJS_DIR)
 	find . -name "*.swap" -delete
 	find . -name ".DS_Store" -delete
 	find . -name "*.gch" -delete
+	rm -f generator
 
 fclean:	clean
 	rm -f $(NAME)
