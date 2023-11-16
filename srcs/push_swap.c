@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 23:13:29 by telufulu          #+#    #+#             */
-/*   Updated: 2023/11/16 23:38:18 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/11/17 00:05:05 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ int	main(int argc, char **argv)
 	if (argc > 1)
 	{
 		set_stack(&a, argv + 1);
+		//if (argc <= 4 && argc > 2)
+		//	small_sort(&a);
 		check_stack(a, 0);
 	}
 	else

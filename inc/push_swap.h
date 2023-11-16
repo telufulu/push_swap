@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 23:12:12 by telufulu          #+#    #+#             */
-/*   Updated: 2023/11/16 23:28:31 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/11/17 00:14:43 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,14 @@
 // push_swap.c
 
 // stack_utils.c
-void	check_stack(t_stack *a, t_stack *b);
+void	rename_nbs(t_stack **a);
 void	set_stack(t_stack **a, char **num);
-void	check_dup(t_stack *a);
 int		is_order(t_stack *x);
 int		is_rev_order(t_stack *x);
+
+// checks.c
+void	check_stack(t_stack *a, t_stack *b);
+void	check_dup(t_stack *a);
 
 // operators.c
 void	swap(t_stack **a, t_stack **b);
