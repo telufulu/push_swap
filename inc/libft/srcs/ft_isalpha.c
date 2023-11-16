@@ -1,27 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: telufulu <telufulu@student.42madrid>       +#+  +:+       +#+        */
+/*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/23 23:13:29 by telufulu          #+#    #+#             */
-/*   Updated: 2023/11/16 19:24:58 by telufulu         ###   ########.fr       */
+/*   Created: 2023/08/01 18:29:04 by telufulu          #+#    #+#             */
+/*   Updated: 2023/08/01 18:45:51 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	main(int argc, char **argv)
+int	ft_isalpha(int c)
 {
-	//t_stack	*a;
-
-	//a = 0;
-	if (argc > 1)
-	{
-		ft_putstr_fd(argv[1], 1);
-	}
-	else
-		ft_error();
+	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+		return (1);
 	return (0);
 }

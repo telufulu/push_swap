@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: telufulu <telufulu@student.42madrid>       +#+  +:+       +#+        */
+/*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/23 23:13:29 by telufulu          #+#    #+#             */
-/*   Updated: 2023/11/16 19:24:58 by telufulu         ###   ########.fr       */
+/*   Created: 2023/08/06 17:21:25 by telufulu          #+#    #+#             */
+/*   Updated: 2023/08/12 13:59:22 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	main(int argc, char **argv)
+char	*ft_strchr(const char *s, int c)
 {
-	//t_stack	*a;
+	char	*aux;
 
-	//a = 0;
-	if (argc > 1)
+	aux = (char *)s;
+	while (*aux != '\0')
 	{
-		ft_putstr_fd(argv[1], 1);
+		if (*aux == (char)c)
+			return (aux);
+		aux++;
 	}
-	else
-		ft_error();
+	if (*aux == (char)c)
+		return (aux);
 	return (0);
 }

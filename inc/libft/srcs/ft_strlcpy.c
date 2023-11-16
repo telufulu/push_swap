@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: telufulu <telufulu@student.42madrid>       +#+  +:+       +#+        */
+/*   By: telufulu <telufulu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/23 23:13:29 by telufulu          #+#    #+#             */
-/*   Updated: 2023/11/16 19:24:58 by telufulu         ###   ########.fr       */
+/*   Created: 2023/07/09 03:15:35 by telufulu          #+#    #+#             */
+/*   Updated: 2023/08/12 14:16:49 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	main(int argc, char **argv)
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	//t_stack	*a;
+	int	i;
 
-	//a = 0;
-	if (argc > 1)
+	i = 0;
+	while (dstsize > 1 && src[i] != '\0')
 	{
-		ft_putstr_fd(argv[1], 1);
+		dst[i] = src[i];
+		i++;
+		dstsize--;
 	}
-	else
-		ft_error();
-	return (0);
+	if (dstsize > 0)
+		dst[i] = '\0';
+	return (ft_strlen(src));
 }

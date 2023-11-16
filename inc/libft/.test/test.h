@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   test.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: telufulu <telufulu@student.42madrid>       +#+  +:+       +#+        */
+/*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/23 23:13:29 by telufulu          #+#    #+#             */
-/*   Updated: 2023/11/16 19:24:58 by telufulu         ###   ########.fr       */
+/*   Created: 2023/08/27 15:11:20 by telufulu          #+#    #+#             */
+/*   Updated: 2023/08/27 15:12:10 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#ifndef TEST_H
+# define TEST_H
 
-int	main(int argc, char **argv)
-{
-	//t_stack	*a;
+# include <stdio.h>
+# include <string.h>
 
-	//a = 0;
-	if (argc > 1)
-	{
-		ft_putstr_fd(argv[1], 1);
-	}
-	else
-		ft_error();
-	return (0);
-}
+int	test_part1(int argc, char **argv);
+int	test_part2(int argc, char **argv);
+int	test_bonus(int argc, char **argv);
+
+#endif
