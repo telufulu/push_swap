@@ -1,28 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_lstpen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: telufulu <telufulu@student.42madrid>       +#+  +:+       +#+        */
+/*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/23 23:13:29 by telufulu          #+#    #+#             */
-/*   Updated: 2023/11/16 23:38:18 by telufulu         ###   ########.fr       */
+/*   Created: 2023/08/20 22:17:29 by telufulu          #+#    #+#             */
+/*   Updated: 2023/11/16 23:33:25 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	main(int argc, char **argv)
+t_stack	*ft_lstpen(t_stack *lst)
 {
-	t_stack	*a;
-
-	a = 0;
-	if (argc > 1)
-	{
-		set_stack(&a, argv + 1);
-		check_stack(a, 0);
-	}
-	else
-		ft_error();
-	return (0);
+	while (lst && lst->next && (lst->next)->next)
+		lst = lst->next;
+	return (lst);
 }

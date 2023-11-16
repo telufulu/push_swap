@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 13:31:25 by telufulu          #+#    #+#             */
-/*   Updated: 2023/11/16 22:35:53 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/11/16 23:31:30 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ typedef struct s_stack
 t_stack	*ft_lstnew(int nb);
 size_t	ft_lstsize(t_stack *lst);
 t_stack	*ft_lstlast(t_stack *lst);
+t_stack	*ft_lstpen(t_stack *lst);
 void	ft_lstadd_back(t_stack **lst, t_stack *new);
 
 // Additional functions

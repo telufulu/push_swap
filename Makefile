@@ -9,7 +9,7 @@ LIBFT			=	$(LIBFT_DIR)libft.a
 SRCS			=	$(addprefix $(SRCS_DIR), $(SRCS_FILES))
 OBJS			=	$(addprefix $(OBJS_DIR), $(OBJS_FILES))
 OBJS_FILES		=	$(SRCS_FILES:%.c=%.o)
-SRCS_FILES		=	push_swap.c stack_utils.c
+SRCS_FILES		=	push_swap.c stack_utils.c operators.c
 
 SRCS_DIR		=	srcs/
 OBJS_DIR		=	objs/
@@ -43,5 +43,5 @@ fclean:	clean
 
 re:	fclean all
 
-.SILENT: all clean fclean re $(NAME) $(OBJS) $(LIBFT)
-.PHONY: all clean fclean re	
+.SILENT: all clean fclean re generator $(NAME) $(OBJS) $(LIBFT)
+.PHONY: all clean fclean re	generator
