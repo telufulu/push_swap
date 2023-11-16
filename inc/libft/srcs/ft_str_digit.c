@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 22:33:24 by telufulu          #+#    #+#             */
-/*   Updated: 2023/11/16 22:43:00 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/11/16 23:04:29 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,16 @@
 
 int	ft_str_digit(char *s)
 {
-	while (*s)
+	size_t	i;
+
+	i = 0;
+	while (s[i])
 	{
-		if (!ft_isdigit(*s))
+		if ((s[i] == '+' || s[i] == '-'))
+			i++;
+		if (!ft_isdigit(s[i]))
 			return (0);
-		s++;
+		i++;
 	}
 	return (1);
 }
