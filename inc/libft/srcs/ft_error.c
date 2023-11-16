@@ -1,22 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone_bonus.c                               :+:      :+:    :+:   */
+/*   ft_error.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/21 12:37:52 by telufulu          #+#    #+#             */
-/*   Updated: 2023/08/21 13:31:44 by telufulu         ###   ########.fr       */
+/*   Created: 2023/11/16 22:39:43 by telufulu          #+#    #+#             */
+/*   Updated: 2023/11/16 22:39:46 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstdelone(t_list *lst, void (*del)(void *))
+void	ft_error(void)
 {
-	if (lst)
-	{
-		(*del)(lst->content);
-		free(lst);
-	}
+	write(1, "\x1b[31mError\x1b[0m\n", 15);
+	exit(EXIT_FAILURE);
 }

@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
+/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/21 14:11:23 by telufulu          #+#    #+#             */
-/*   Updated: 2023/08/21 16:47:26 by telufulu         ###   ########.fr       */
+/*   Created: 2023/08/19 17:05:48 by telufulu          #+#    #+#             */
+/*   Updated: 2023/11/16 21:33:29 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstclear(t_list **lst, void (*del)(void *))
+t_stack	*ft_lstnew(int nb)
 {
-	t_list	*aux;
+	t_stack	*res;
 
-	while ((*lst))
-	{
-		aux = (*lst)->next;
-		ft_lstdelone((*lst), (*del));
-		(*lst) = aux;
-	}
+	res = ft_calloc(sizeof(t_stack), 1);
+	if (!res)
+		return (NULL);
+	res->nb = nb;
+	res->next = NULL;
+	return (res);
 }

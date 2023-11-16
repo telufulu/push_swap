@@ -9,7 +9,7 @@ LIBFT			=	$(LIBFT_DIR)libft.a
 SRCS			=	$(addprefix $(SRCS_DIR), $(SRCS_FILES))
 OBJS			=	$(addprefix $(OBJS_DIR), $(OBJS_FILES))
 OBJS_FILES		=	$(SRCS_FILES:%.c=%.o)
-SRCS_FILES		=	push_swap.c stack_utils.c error_utils.c
+SRCS_FILES		=	push_swap.c stack_utils.c
 
 SRCS_DIR		=	srcs/
 OBJS_DIR		=	objs/
@@ -31,6 +31,7 @@ generator:
 
 clean:
 	rm -rf $(OBJS_DIR)
+	make clean -C $(LIBFT_DIR)
 	find . -name "*.swap" -delete
 	find . -name ".DS_Store" -delete
 	find . -name "*.gch" -delete
@@ -38,6 +39,7 @@ clean:
 
 fclean:	clean
 	rm -f $(NAME)
+	make fclean -C $(LIBFT_DIR)
 
 re:	fclean all
 

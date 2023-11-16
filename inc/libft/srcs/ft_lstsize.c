@@ -6,15 +6,15 @@
 /*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/20 22:06:52 by telufulu          #+#    #+#             */
-/*   Updated: 2023/08/20 22:15:39 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/11/16 21:34:36 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_lstsize(t_list *lst)
+size_t	ft_lstsize(t_stack *lst)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (lst)

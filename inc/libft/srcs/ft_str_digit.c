@@ -1,25 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstiter_bonus.c                                 :+:      :+:    :+:   */
+/*   ft_str_digit.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/21 14:11:23 by telufulu          #+#    #+#             */
-/*   Updated: 2023/08/21 16:53:24 by telufulu         ###   ########.fr       */
+/*   Created: 2023/11/16 22:33:24 by telufulu          #+#    #+#             */
+/*   Updated: 2023/11/16 22:43:00 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstiter(t_list *lst, void (*f)(void *))
+int	ft_str_digit(char *s)
 {
-	t_list	*aux;
-
-	while (lst)
+	while (*s)
 	{
-		aux = lst->next;
-		(*f)(lst->content);
-		lst = aux;
+		if (!ft_isdigit(*s))
+			return (0);
+		s++;
 	}
+	return (1);
 }
