@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 20:24:35 by telufulu          #+#    #+#             */
-/*   Updated: 2023/11/17 00:16:13 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/11/17 00:54:33 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	rename_nbs(t_stack **a)
 	while (num_chekd)
 	{
 		aux = (*a);
-		i = 0;
+		i = 1;
 		while (aux)
 		{
 			if (num_chekd->nb > aux->nb)
