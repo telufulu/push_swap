@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 13:31:25 by telufulu          #+#    #+#             */
-/*   Updated: 2023/11/16 23:58:36 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/11/21 19:25:27 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void	ft_putnbr_fd(int n, int fd);
 typedef struct s_stack
 {
 	int				nb;
-	int				pos;
+	unsigned int	pos;
 	struct s_stack	*next;
 }				t_stack;
 

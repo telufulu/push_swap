@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 20:24:35 by telufulu          #+#    #+#             */
-/*   Updated: 2023/11/17 00:54:33 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/11/21 21:10:00 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,28 +63,32 @@ void	set_stack(t_stack **a, char **num)
 
 int	is_order(t_stack *x)
 {
-	int	aux;
+	size_t	len;
+	size_t	i;
 
-	while (x && x->next)
+	i = 1;
+	len = ft_lstsize(x);
+	while (i <= len)
 	{
-		aux = x->nb;
-		x = x->next;
-		if (aux > x->nb)
+		if (x->pos != i)
 			return (0);
+		x = x->next;
+		i++;
 	}
 	return (1);
 }
 
 int	is_rev_order(t_stack *x)
 {
-	int	aux;
+	size_t	len;
 
-	while (x && x->next)
+	len = ft_lstsize(x);
+	while (len)
 	{
-		aux = x->nb;
-		x = x->next;
-		if (aux < x->nb)
+		if (!(x->pos == len))
 			return (0);
+		x = x->next;
+		len--;
 	}
 	return (1);
 }
