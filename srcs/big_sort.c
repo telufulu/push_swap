@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sorts.c                                            :+:      :+:    :+:   */
+/*   big_sort.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 00:19:49 by telufulu          #+#    #+#             */
-/*   Updated: 2023/11/27 15:53:17 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/11/27 17:23:14 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	push_b_stack(t_stack **a, t_stack **b)
 	size_t 	big;
 	t_stack *last;
 
-	big = ft_lstsize(*a);
+	big = ft_lstsize(*a) - 1;
 	i = 10;
 	while ((*a)->next)
 	{
@@ -59,7 +59,7 @@ void	final_sort(t_stack **a, t_stack **b)
 {
 	size_t	big;
 
-	big = ft_lstsize(*b);
+	big = ft_lstsize(*b) - 1;
 	while (*b)
 	{
 		if ((*b)->pos == big)
@@ -74,11 +74,8 @@ void	final_sort(t_stack **a, t_stack **b)
 	}
 }
 
-void	big_sort(t_stack **a)
+void	big_sort(t_stack **a, t_stack **b)
 {
-	t_stack	*b;
-
-	b = 0;
-	push_b_stack(a, &b);
-	final_sort(a, &b);
+	push_b_stack(a, b);
+	final_sort(a, b);
 }

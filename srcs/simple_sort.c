@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 15:28:59 by telufulu          #+#    #+#             */
-/*   Updated: 2023/11/27 16:36:54 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/11/27 16:40:19 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	small_sort(t_stack **a)
 			rotate(a, 0);
 		else if (((*a)->nb > three->nb && (*a)->nb < two->nb))
 			rev_rotate(a, 0);
-		else if ((*a)->nb > two->nb ||
+		else if ((*a)->nb > two->nb || 
 			((*a)->nb < two->nb && (*a)->nb < three->nb))
 			swap(a, 0);
 	}

@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 23:13:29 by telufulu          #+#    #+#             */
-/*   Updated: 2023/11/27 16:35:59 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/11/27 17:22:21 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int	main(int argc, char **argv)
 	b = 0;
 	if (argc > 1)
 	{
+		check_stack(a, 0);
 		set_stack(&a, argv + 1);
 		if (argc == 2)
 			return (0);
@@ -29,7 +30,7 @@ int	main(int argc, char **argv)
 		else if ((argc - 1) <= 5)
 			medium_sort(&a, &b);
 		else if ((argc - 1) > 5)
-			big_sort(&a);
+			big_sort(&a, &b);
 		check_stack(a, 0);
 		if (!is_order(a))
 			ft_error();
