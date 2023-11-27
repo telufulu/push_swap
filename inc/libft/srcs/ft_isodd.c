@@ -1,39 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   generator.c                                        :+:      :+:    :+:   */
+/*   ft_isodd.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/14 20:14:47 by telufulu          #+#    #+#             */
-/*   Updated: 2023/11/23 21:25:52 by telufulu         ###   ########.fr       */
+/*   Created: 2023/11/23 20:44:55 by telufulu          #+#    #+#             */
+/*   Updated: 2023/11/23 20:47:45 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
-#include <limits.h>
-
-int	main(int argc, char **argv)
+int	ft_isodd(int i)
 {
-	size_t			len;
-	size_t			i;
-	unsigned int	num;
-
-	len = atoi(argv[1]);
-	i = 0;
-	if (argc == 2)
-	{
-		srand(time(NULL));
-		while (i++ < len) 
-		{
-			num = rand() % 1000000;
-			if (i < len)
-				printf("%d ", num);
-			else if (i == len)
-				printf("%d\n", num);
-		}
-	}
+	if (!(i % 2))
+		return (1);
 	return (0);
 }

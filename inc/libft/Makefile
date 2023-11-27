@@ -15,7 +15,7 @@ SRCS_FILES			=	ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c \
 						ft_lstnew.c ft_lstsize.c ft_lstlast.c \
 						ft_lstadd_back.c ft_lstpen.c $(ADD_FUNCT)
 ADD_FUNCT			=	ft_free_split.c ft_error.c ft_putnbr_base.c \
-						ft_str_digit.c
+						ft_str_digit.c ft_isodd.c
 SRCS_DIR			=	srcs/
 
 OBJS				=	$(addprefix $(OBJS_DIR), $(OBJS_FILES))

@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 13:31:25 by telufulu          #+#    #+#             */
-/*   Updated: 2023/11/21 19:25:27 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/11/23 20:45:18 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,4 +74,5 @@ char	**ft_free_split(char **res, int i);
 void	ft_error(void);
 size_t	ft_putnbr_base(int nb, char *base);
 int		ft_str_digit(char *s);
+int		ft_isodd(int i);
 #endif

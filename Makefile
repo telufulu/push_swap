@@ -10,7 +10,7 @@ SRCS			=	$(addprefix $(SRCS_DIR), $(SRCS_FILES))
 OBJS			=	$(addprefix $(OBJS_DIR), $(OBJS_FILES))
 OBJS_FILES		=	$(SRCS_FILES:%.c=%.o)
 SRCS_FILES		=	push_swap.c checks.c stack_utils.c operators.c \
-					sorts.c
+					big_sort.c simple_sort.c
 
 SRCS_DIR		=	srcs/
 OBJS_DIR		=	objs/

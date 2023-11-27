@@ -6,18 +6,18 @@
 /*   By: telufulu <telufulu@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 23:12:12 by telufulu          #+#    #+#             */
-/*   Updated: 2023/11/21 21:07:34 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/11/27 16:16:20 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include <stdio.h>
-/*
- * borrar ^|^
- */
+# include "stdio.h"
 
+/*
+	borrar stdio.h
+*/
 # include "libft/inc/libft.h"
 # include <stdlib.h>
 # include <unistd.h>
@@ -31,7 +31,6 @@
 void	rename_nbs(t_stack **a);
 void	set_stack(t_stack **a, char **num);
 int		is_order(t_stack *x);
-int		is_rev_order(t_stack *x);
 
 // checks.c
 void	check_stack(t_stack *a, t_stack *b);
@@ -43,10 +42,12 @@ void	push(t_stack **a, t_stack **b, char flag);
 void	rotate(t_stack **a, t_stack **b);
 void	rev_rotate(t_stack **a, t_stack **b);
 
-// sorts.c
-void	small_sort(t_stack **a);
+// big_sort.c
 size_t	num_pos(t_stack *x, size_t big);
 void	final_sort(t_stack **a, t_stack **b);
 void	big_sort(t_stack **a);
 
+// simple_sort.c
+void	small_sort(t_stack **a);
+void	medium_sort(t_stack **a, t_stack **b);
 #endif
