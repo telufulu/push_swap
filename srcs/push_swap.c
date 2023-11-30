@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 23:13:29 by telufulu          #+#    #+#             */
-/*   Updated: 2023/11/27 17:22:21 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/11/30 19:56:56 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,20 +16,22 @@ int	main(int argc, char **argv)
 {
 	t_stack	*a;
 	t_stack	*b;
+	size_t	size;
 
 	a = 0;
 	b = 0;
 	if (argc > 1)
 	{
-		check_stack(a, 0);
 		set_stack(&a, argv + 1);
-		if (argc == 2)
+		size = ft_lstsize(a);
+		//check_stack(a, 0);
+		if (size == 1)
 			return (0);
-		else if ((argc - 1) <= 3)
-			small_sort(&a);
-		else if ((argc - 1) <= 5)
+		else if (size <= 3)
+			small_sort(&a, &b);
+		else if (size <= 5)
 			medium_sort(&a, &b);
-		else if ((argc - 1) > 5)
+		else if (size > 5)
 			big_sort(&a, &b);
 		check_stack(a, 0);
 		if (!is_order(a))

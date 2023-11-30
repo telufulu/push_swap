@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 23:12:12 by telufulu          #+#    #+#             */
-/*   Updated: 2023/11/27 16:41:56 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/11/30 19:50:15 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
 
 # define INT_MAX 2147483647
 # define INT_MIN -2147483648
-
+# define UINT_MAX 4294967295
 // push_swap.c
 
 // stack_utils.c
@@ -49,6 +49,6 @@ void	final_sort(t_stack **a, t_stack **b);
 void	big_sort(t_stack **a, t_stack **b);
 
 // simple_sort.c
-void	small_sort(t_stack **a);
+void	small_sort(t_stack **a, t_stack **b);
 void	medium_sort(t_stack **a, t_stack **b);
 #endif
