@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 15:28:59 by telufulu          #+#    #+#             */
-/*   Updated: 2023/11/30 19:56:59 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/12/05 21:29:57 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,32 +50,36 @@ size_t	get_small(t_stack *x)
 	return (res);
 }
 
-void	medium_sort(t_stack **a, t_stack **b)
+void	push_small(t_stack **a, t_stack **b, size_t small)
 {
 	t_stack	*two;
 	t_stack	*last;
-	size_t	small;
 
-	two = 0;
-	last = 0;
+	two = (*a)->next;
+	last = ft_lstlast(*a);
+	if ((*a)->pos == small || (*a)->pos == small + 1)
+		push(a, b, 'b');
+	else if (((*a)->pos == two->pos + 1) || \
+			two->pos == small || two->pos == small + 1)
+		swap(a, 0);
+	else if (last->pos == small || last->pos == small + 1)
+		rev_rotate(a, 0);
+	else
+		rotate(a, 0);
+}
+
+void	medium_sort(t_stack **a, t_stack **b)
+{
+	size_t	small;
+	int		i;
+
+	i = 2;
 	small = get_small(*a);
 	while (!is_order(*a) && ft_lstsize(*a) > 3)
-	{
-		two = (*a)->next;
-		last = ft_lstlast(*a);
-		if ((*a)->pos == small || (*a)->pos == small + 1)
-			push(a, b, 'b');
-		else if (((*a)->pos == two->pos + 1) || \
-				two->pos == small || two->pos == small + 1)
-			swap(a, 0);
-		else if (last->pos == small || last->pos == small + 1)
-			rev_rotate(a, 0);
-		else
-			rotate(a, 0);
-	}
+		push_small(a, b, small);
 	small_sort(a, b);
 	if (*b && (*b)->next && (*b)->pos < ((*b)->next)->pos)
 		swap(0, b);
-	while (*b)
+	while (*b && --i)
 		push(a, b, 'a');
 }
