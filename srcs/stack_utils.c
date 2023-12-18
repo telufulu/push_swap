@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 20:24:35 by telufulu          #+#    #+#             */
-/*   Updated: 2023/11/27 16:16:10 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/12/18 13:49:16 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,10 @@ void	rename_nbs(t_stack **a)
 
 void	set_stack(t_stack **a, char **num)
 {
-	char	**aux;
-	size_t	i;
-	size_t	j;
+	char		**aux;
+	long int	n;
+	size_t		i;
+	size_t		j;
 
 	i = 0;
 	while (num[i])
@@ -51,7 +52,10 @@ void	set_stack(t_stack **a, char **num)
 		{
 			if (!ft_str_digit(aux[j]))
 				ft_error();
-			ft_lstadd_back(a, ft_lstnew(ft_atoi(aux[j])));
+			n = ft_atoi(aux[j]);
+			if (n > INT_MAX || n < INT_MIN)
+				ft_error();
+			ft_lstadd_back(a, ft_lstnew((int)n));
 			j++;
 		}
 		ft_free_split(aux, j);

@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 23:13:29 by telufulu          #+#    #+#             */
-/*   Updated: 2023/12/05 21:37:45 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/12/18 13:55:33 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,12 @@ int	main(int argc, char **argv)
 		size = ft_lstsize(a);
 		if (size == 1)
 			return (0);
-		else if (size <= 3)
+		else if (!is_order(a) && size <= 3)
 			small_sort(&a, &b);
-		else if (size <= 5)
+		else if (!is_order(a) && size <= 5)
 			medium_sort(&a, &b);
-		else if (size > 5)
+		else if (!is_order(a) && size > 5)
 			big_sort(&a, &b, size - 1);
 	}
-	else
-		ft_error();
 	return (0);
 }

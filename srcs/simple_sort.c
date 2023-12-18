@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 15:28:59 by telufulu          #+#    #+#             */
-/*   Updated: 2023/12/05 21:29:57 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/12/18 13:55:39 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ void	small_sort(t_stack **a, t_stack **b)
 				swap(a, 0);
 		}
 	}
+	if (ft_lstsize(*b) == 1)
+		push(a, b, 'a');
 }
 
 size_t	get_small(t_stack *x)
@@ -80,6 +82,6 @@ void	medium_sort(t_stack **a, t_stack **b)
 	small_sort(a, b);
 	if (*b && (*b)->next && (*b)->pos < ((*b)->next)->pos)
 		swap(0, b);
-	while (*b && --i)
+	while (*b && i-- && ft_lstsize(*a) < 5)
 		push(a, b, 'a');
 }

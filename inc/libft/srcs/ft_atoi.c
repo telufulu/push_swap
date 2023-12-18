@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 21:13:59 by telufulu          #+#    #+#             */
-/*   Updated: 2023/08/09 21:31:16 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/12/18 13:39:56 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ static int	ft_isspace(int c)
 	return (0);
 }
 
-int	ft_atoi(const char *str)
+long int	ft_atoi(const char *str)
 {
-	int	res;
-	int	neg;
+	long int	res;
+	int			neg;
 
 	neg = 1;
 	res = 0;
