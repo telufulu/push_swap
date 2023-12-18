@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 23:12:12 by telufulu          #+#    #+#             */
-/*   Updated: 2023/12/18 13:42:37 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/12/18 16:41:38 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,6 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-# define INT_MAX 2147483647
-# define INT_MIN -2147483648
-# define UINT_MAX 4294967295
 // push_swap.c
 
 // stack_utils.c

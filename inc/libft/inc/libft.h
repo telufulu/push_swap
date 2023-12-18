@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 13:31:25 by telufulu          #+#    #+#             */
-/*   Updated: 2023/12/18 13:40:49 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/12/18 16:43:01 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# define INT_MAX 2147483647
+# define INT_MIN -2147483648
+# define UINT_MAX 4294967295
 
 // C Standard
 int			ft_isalpha(int c);

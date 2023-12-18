@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 20:24:35 by telufulu          #+#    #+#             */
-/*   Updated: 2023/12/18 13:49:16 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/12/18 16:43:05 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,6 @@ void	set_stack(t_stack **a, char **num)
 			if (!ft_str_digit(aux[j]))
 				ft_error();
 			n = ft_atoi(aux[j]);
-			if (n > INT_MAX || n < INT_MIN)
-				ft_error();
 			ft_lstadd_back(a, ft_lstnew((int)n));
 			j++;
 		}

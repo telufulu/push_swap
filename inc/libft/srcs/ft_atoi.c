@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 21:13:59 by telufulu          #+#    #+#             */
-/*   Updated: 2023/12/18 13:39:56 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/12/18 16:43:03 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,7 @@ long int	ft_atoi(const char *str)
 		res += (*str - '0');
 		str++;
 	}
+	if ((res * neg) > INT_MAX || (res * neg) < INT_MIN)
+		ft_error();
 	return (res * neg);
 }

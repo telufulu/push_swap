@@ -6,7 +6,7 @@
 /*   By: telufulu <telufulu@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 22:39:43 by telufulu          #+#    #+#             */
-/*   Updated: 2023/11/16 22:39:46 by telufulu         ###   ########.fr       */
+/*   Updated: 2023/12/18 16:37:21 by telufulu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 void	ft_error(void)
 {
-	write(1, "\x1b[31mError\x1b[0m\n", 15);
+	write(2, "Error\n", 6);
 	exit(EXIT_FAILURE);
 }
