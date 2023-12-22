@@ -1,3 +1,5 @@
+<img src=".final_score.png" width="100%" />
+
 ### Sumary
 This project will make you sort data on a stack, with a limited set of instructions, using
 the lowest possible number of actions. To succeed you’ll have to manipulate various
@@ -6,4 +8,4 @@ optimized data sorting
 
 | Score | Time invested | Documentation |
 |-------|---------------|---------------|
-| ![125%](https://progress-bar.dev/0) | 0h | [Push swap](https://www.notion.so/telufulu/Push_swap-be9020a4c613483cb374c10ad945d1a4?pvs=4) |
+| ![125%](https://progress-bar.dev/86) | 55h | [Push swap](https://www.notion.so/telufulu/Push_swap-be9020a4c613483cb374c10ad945d1a4?pvs=4) |
